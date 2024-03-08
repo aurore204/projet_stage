@@ -1,0 +1,111 @@
+/*Import Google fontlink*/
+@import url("https://fonts.googleapis.com/css2? family=poppins:wght@400;600&display=swap");
+*{
+    margin:0;
+    padding:0;
+    border:none;
+    outline: none;
+    box-sizing: border-box;
+    font-family:"poppins",sans-serif;
+   
+}
+body{
+    height:180vh ;
+    display: flex;
+    flex-direction: column;
+}/*VOICI LE STYLE DE L INVENTAIRE*/
+
+/*haut de page*/
+
+/* menu de la page main body section*/
+main{
+    height:160vh;
+    display: flex;
+    gap:3em;
+    background-color: #dde6ed;
+    margin-top: -9%;
+}
+.main--content{
+    position :relative;
+    width:77%;
+    padding:1rem;
+   
+}
+/*debut du main -- card container*/
+.card--container{
+    padding: 2rem;
+    border-radius: 10px;
+    width: 70%;
+    height:350px;
+    
+}
+.card--wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.card--wrapper1{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+.card--wrapper2{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+.main--tittle{
+    color:#27374d;
+    padding-bottom: 10px;
+    font-size: 35px;
+}
+.dashbord{
+    background-color:#27374d;
+    color: #ffff;
+    border-radius: 10px;
+    padding: 1.2rem;
+    width:280px;
+    height:150px;
+    display: flex;
+    flex-direction:column ;
+    justify-content: space-between;
+    transition: all 0.5s ease-in-out;
+}
+.amount{
+    display: flex;
+    flex-direction: column;
+    gap:1em;
+}
+.dashbord:hover{
+    transform:translateY(-5px) ;
+}
+.card--header{
+    display: flex;
+    justify-content: space-between;
+}
+.amount{
+    display: flex;
+    flex-direction: column;
+}
+.tittle{
+    font-size: 18px;
+}
+.vp-values{
+    font-size:24px;
+}
+.icon{
+    color:black;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 13px;
+    width:45px;
+    height:40px;
+    background-color:white;
+    margin-left: 70%;
+    margin-top: -20%;
+}
+/*fin du main*/
+
+/*footer*/
+
+/*din footer*/

@@ -1,0 +1,117 @@
+/*Import Google fontlink*/
+@import url("https://fonts.googleapis.com/css2? family=poppins:wght@400;600&display=swap");
+*{
+    margin:0;
+    padding:0;
+    border:none;
+    outline: none;
+    box-sizing: border-box;
+    font-family:"poppins",sans-serif;
+   
+}
+.header{
+    height:18%;
+    background-color:#ebe9e9;
+    width:100%;
+    border-bottom: 1px solid var(--light-grey);
+    margin-top: 0px;
+    
+}
+.header--wrapper img{
+    width:150px;
+    height:80px;
+    border-radius:20%;
+    margin-right: 5%;
+}
+.header--wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #ffff;
+    border-radius: 10px;
+    padding: 10px 2rem;
+    margin-bottom: 1rem;
+}
+.header--titlle{
+    color:#27374d;
+    display: flex;
+    flex-direction: row;
+}
+.user--info{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+}
+.search--box{
+    background-color: rgb(237,237,237);
+    border-radius: 15px;
+    color:rgba(113,99,186,255);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding:4px 12px;
+}
+.search--box input{
+    background: transparent;
+    padding: 10px;
+}
+.search--box i{
+    font-size: 1.2rem;
+    cursor:pointer;
+    transition: all 0.5s ease-out;
+}
+.search--box i:hover{
+    transform: scale(1.2);
+}
+.logo{
+    background-image:url(pa.png);
+    width:10px;
+    height:10px; 
+    padding:16px;
+   
+}
+/*dropdown*/
+.user--info #dropdown .sub-menu li{
+    margin-top: -10px;
+    background-color:#005;
+    text-align: center;
+    margin-left: -15%;
+    border-radius: 5%;
+    width: 100%;
+    display: flex;
+    gap:0.5em ;
+    height: 62%;    
+}
+.user--info #dropdown .sub-menu {
+    display: none;}
+.user--info  .sub-menu a{
+    color: #fff;
+    font-size: 17px;
+    padding: 3px 0;
+    white-space: nowrap;
+    opacity: 0.;
+    display: block;
+    text-decoration: none;
+
+}
+#dropdown:hover .sub-menu{
+    display: block;
+}
+.user--info .close #dropdown .sub-menu {
+   position: absolute;
+   left: 100%;
+}
+#dropdown .sub-menu a:hover{
+    background-color:#e0e0e058;
+    width: 160px;
+    height: 110%;
+    border-radius: 10%;}
+    .chevron{
+        display: flex;
+        flex-direction: row;
+        gap: 0.5em;
+    }
+/*fin dropdown*/
+
+/* fin du haut de page*/

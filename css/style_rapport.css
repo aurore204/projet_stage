@@ -1,0 +1,60 @@
+/* Adjust the sidebar styling as needed */
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100; /* Adjust as needed */
+    padding: 48px 0 0; /* Adjust the padding to avoid content hiding underneath */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  }
+  
+  .sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px); /* Adjust the height to fill the viewport */
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable sidebar */
+  }
+  
+  @media (min-width: 768px) {
+    .sidebar {
+      width: 200px;
+    }
+  }
+  
+  
+    hgcfc
+    .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+  
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+  
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+  
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+  
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+  
+      .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+      }  
