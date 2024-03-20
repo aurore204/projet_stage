@@ -6,6 +6,8 @@
 </head>
 <body>
 <div class="footer">
-    <h4> tous les droits sont reserves</h4>
+    <h5> tous les droits sont reserves <a href="infos@ime_school.com">infos@ime_school.com</a><br>
+        CONTACT:691 44 85 39/679 78 10 93
+    </h5>
 </div>
 </body>

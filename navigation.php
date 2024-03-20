@@ -11,17 +11,41 @@
 <div class="sidebar close">
         <ul class="menu">
             <li class="active">
-                <a href="#" >
                 <div class="align">
                     <i class="fa fa-tachometer-alt" style="font-size:20px"></i>
                     <span><a href="accueil.php" class="item">Dashboard</a></span>
                 </a>
             </li> 
-            </li> 
             <li>
                 <div class="align">
-                    <i class="fas fa-table"  class="icon"style="font-size:20px"></i>
-                    <span><a href="lsts_materiels.php" class="item">Suivi des emprunts</a></span>
+                    <i class="fas fa-table" class="icon" style="font-size:20px"></i> <!-- Icône Font Awesome pour la gestion des emprunts -->
+                    <span><a href="liste_emprunts.php" class="item">Suivi des emprunts</a></span>
+                    <div class="dropdown">
+                        <div class="chevron">
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
+                        <ul class="sub-menu">
+                            <li><a href="liste_Emprunteur"><i class="fas fa-users"></i> Gestion des emprunteurs</a></li>
+                            <li><a href="liste_filiere.php"><i class="fas fa-school"></i> Gestion des filières</a></li>
+                        </ul>  
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="align">
+                    <i class="fas fa-desktop"  class="icon"style="font-size:20px"></i>
+                    <span><a href="liste_equipement.php" class="item">Gestion des equipements </a></span>
+                    <div class="dropdown">
+                        <div class="chevron">
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
+                        <ul class="sub-menu">
+                            <li><a href="liste_type_equi.php"><i class="fas fa_tables"></i> Gestion des types Materiel</a></li>
+                            <li><a href="liste_equipement.php"><i class="fas fa_tables"></i> Gestion des Equipemnts</a></li>
+
+                        </ul>  
+                    </div>
                 </div>
             </li>
             <li>
@@ -39,7 +63,20 @@
             <li>
                 <div class="align">
                     <i class="fas fa-wrench"  class="icon"style="font-size:20px"></i>
-                    <a href="lsts_clim.php">Maintenance</a>
+                    <span><a href="lsts_clim.php" class="item">Maintenance </a></span>
+                    <div class="dropdown">
+                        <div class="chevron">
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
+                        <ul class="sub-menu">
+                            <li><a href="liste_pannes.php"><i class="fas fa-exclamation-triangle"></i> Gestion des pannes</a></li>
+                            <li><a href="liste_interventionnaire.php"><i class="fas fa-users"></i> Gestion des interventionnaires</a></li>
+                            <li><a href="liste_interventions.php"><i class="fas fa-wrench"></i> Gestion des interventions</a></li>
+                            <li><a href="liste_climatiseurs.php"><i class="fas fa-snowflake"></i> Gestion des climatiseurs</a></li>
+
+
+                        </ul>  
+                    </div>
                 </div>
             </li>
             <li>
@@ -50,24 +87,16 @@
                     </div>
                 </a>
             </li>
-            <div class="align">
-    <div id="utilisateur">
-        <i class="fa fa-users" class="icon" style="font-size:20px"></i>
-        <div id="dropdown" class="dropdown">
-            <div class="chevron">
-                <span class="item"> Gestion utilisateurs </span>
-                <i class="fa fa-chevron-down"></i>
-            </div>
-            <ul class="sub-menu">
-                <li><a href="users.php">directeur</a></li>
-                <li><a href="ana.php">responsable</a></li>
-            </ul>  
-        </div>
-    </div>  
+            <li>
+                <div class="align">
+                    <i class="fas fa-users" class="icon" style="font-size:20px"></i> <!-- Icône Font Awesome pour la gestion des emprunts -->
+                    <span><a href="liste_user.php" class="item">Gestion des utilisateurs</a></span>
+                </div>
+            </li>
             <li class="logout">
                 <div class="align">
                     <i class="fa fa-sign-out-alt"  class="icon"style="font-size:20px"></i>
-                    <span><a href="logout.php" class="item">Logout</a></span>
+                    <span><a href="logout.php" class="item">Deconneion</a></span>
                     <script src="https:cdn.jsdelivr.net/npm/@popperjs/core@2..min.js/10.2/dist/umd/popper"></script>
                     <script src="bootstrap-5.1.3-dist\js\bootstrap.min.js"></script>
                 </div>
@@ -75,5 +104,6 @@
         </ul>
     </div>
    
+
 </body>
 </html>

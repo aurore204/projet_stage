@@ -16,22 +16,12 @@
             <div class="user--info">
                 <div class="search--box">
                     <i class="fas fa-fasolid fa-search" style="font-size:20px"></i>
-                    <input type="text" placeholder="search"/>
+                    <input type="text" placeholder="rechercher"/>
                 </div>  
-                <i class="fa fa-user" style="font-size:20px"></i>
-                <div id="dropdown">
-                            <div class="chevron">
-                                <h5><span class=" item "> role </span></h5>
-                                <i class="fa fa-chevron-down"></i>
-                            </div>
-                            <ul class="sub-menu">
-                                <li><a href="users.php" >admin</a></li>
-                                <li><a href="ana.php">utilisateur</a></li>
-                            </ul>  
-                </div>
+                <i class="fa fa-user" style="font-size:20px"></i>Aurore
             </div>
         </div>
 
 </header>
 </body>
-</html>/.
+</html>

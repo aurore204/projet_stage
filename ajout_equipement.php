@@ -11,14 +11,19 @@
     <title>ajout equipement</title>
     <?php
     function Enregistrer_equipement(){
-    global $id_equipement,$nom_equipement,$statut_equipement ;
+    global $id_equipement,$nom_equipement,$statut_equipement,$quantite_equipement,$quantite_stock_equipement,$ID_type_equi ;
+    echo "cle etrangere:$ID_type_equi";
     try{
         include("connexion.php");
-        $sql="INSERT INTO equipement(id_equipement,nom_equipement,statut_equipement) values(:id,:nom,:statut)";
+        $sql="INSERT INTO equipement(id_equipement,nom_equipement,statut_equipement,quantite_equipement,quantite_stock_equipement,ID_type_equi) 
+        values(:id,:nom,:statut,:quantite,:quantite_stock,:id_type)";
         $sql=$db->prepare($sql);
         $sql->bindvalue(':id',$id_equipement);
         $sql->bindvalue(':nom',$nom_equipement);
         $sql->bindvalue(':statut',$statut_equipement);
+        $sql->bindvalue(':quantite',$quantite_equipement);
+        $sql->bindvalue(':quantite_stock',$quantite_stock_equipement);
+        $sql->bindvalue(':id_type',$ID_type_equi);
         $sql->execute();
         if($sql){
             echo"<h4><font color=blue> Insertion reuissie </font></h4>";
@@ -33,6 +38,51 @@
         die('Erreur:'.$e->getMessage());
     }
 }
+
+function recuperer_id_type_equi(){
+    global $ID_type_equi;
+    try{
+        include("connexion.php");
+        $sql="SELECT ID_type_equi from type_equipement";
+        $sql=$db->prepare($sql);
+        $sql->execute();
+        echo"<SELECT name=\"ID_type_equi\"onchange=\"submit()\">";
+        $a="";
+        echo'<option value="'.$a.'">'.$a.'</option>';
+        while($donnees=$sql->fetch(PDO::FETCH_ASSOC)){
+            $a=$donnees['ID_type_equi'];
+            if($ID_type_equi==$a){
+                echo'<option value="'.$a.'" selected>'.$a.'</option>';
+            }else{
+                echo'<option value="'.$a.'">'.$a.'</option>';
+            }
+            }
+            $sql->closecursor();
+            echo"</select>";
+        }
+    catch(Exception $e){
+        die('Erreur:'.$e->getMessage());
+    }
+}
+
+function recuperer_nom_type_equi(){
+    global $ID_type_equi,$nom_type_equi;
+    try{
+        include("connexion.php");
+        $sql="SELECT nom_type_equi from type_equipement where ID_type_equi=:id_type";
+        $sql=$db->prepare($sql);
+        $sql->bindvalue(':id_type',$ID_type_equi);
+        $sql->execute();
+        while($donnees=$sql->fetch(PDO::FETCH_ASSOC)){
+           $nom_type_equi=$donnees['nom_type_equi'];
+            }
+            $sql->closecursor();
+        }
+    catch(Exception $e){
+        die('Erreur:'.$e->getMessage());
+    }
+}
+
     
   ?>  
 </head>
@@ -42,6 +92,9 @@
             $nom_equipement="";
             $statut_equipement="";
             $quantite_equipement="";
+            $quantite_stock_equipement="";
+            $ID_type_equi="";
+            $nom_type_equi="";
 
             if(isset($_POST['id_equipement'])){
                 $id_equipement=$_POST['id_equipement'];
@@ -55,6 +108,18 @@
             if(isset($_POST['quantite_equipement'])){
                 $quantite_equipement=$_POST['quantite_equipement'];
             }
+            if(isset($_POST['ID_type_equi'])){
+                $ID_type_equi=$_POST['ID_type_equi'];
+                recuperer_nom_type_equi();
+
+            }
+
+            if(isset($_POST['nom_type_equi'])){
+                $nom_type_equi=$_POST['nom_type_equi'];}
+
+            if(isset($_POST['quantite_stock_equipement'])){
+                $quantite_stock_equipement=$_POST['quantite_stock_equipement'];
+            }
             if(isset($_POST['btnEnregistrer_equipement'])){
                 Enregistrer_equipement();
                 header("location:liste_equipement.php");
@@ -66,7 +131,7 @@
 <main id="main">
     <div class="nav">
         <?php
-             include'navigation.php';
+             include'navigation_equi.php';
         ?>
     </div>
     <style>
@@ -89,29 +154,50 @@ h1{
         </style>
         <div class="container py-3">
                 <form action="ajout_equipement.php " method="post" class="row col-8 m-5 g-3 form "  >
-                    <h1>Ajouter un  materiel</h1>
+                    <h1>Modification d'un  equipement</h1>
                     <div class="formulaire">
                     <div class="col md-5">
-                    <label  class="col-sm-2 control-label">nom du materiel:</label>
+                    <label  class="col-sm-5 control-label">nom du materiel:</label>
                         <div class="col-sm-12">
-                            <input type="text "name="nom_equipement" placeholder="ecrivez" class="form-control" id="input2">
+                            <input type="text" name="nom_equipement" placeholder="ecrivez" class="form-control" value ="<?php echo $nom_equipement; ?>" id="input2">
                         </div>
                     <div>
                     <div class="col md-5">
-                    <label  class="col-sm-2 control-label">Quantite initial du materiel:</label>
+                    <label  class="col-sm-5 control-label">Quantite initial des equipements:</label>
                         <div class="col-sm-12">
-                            <input type="text "name="quantite_equipement" placeholder="ecrivez" class="form-control" id="input2">
+                            <input type="text" name="quantite_equipement" placeholder="ecrivez" value ="<?php echo $quantite_equipement; ?>" class="form-control" id="input2">
                     </div>
+                    <div class="col md-5">
+                    <label  class="col-sm-5 control-label">Quantite en stock des equipements:</label>
+                        <div class="col-sm-12">
+                            <input type="text" name="quantite_stock_equipement" placeholder="ecrivez" class="form-control" value ="<?php echo $quantite_stock_equipement; ?>" id="input2">
+                    </div>  
                     </div>
                     <div  class="col md-5">
                     <label class="form-label">satut equipement</label>
-                            <select  class="form-select" name="statut_equipement">
+                            <select  class="form-select" name="statut_equipement" value ="<?php echo $statut_equipement; ?>">
                                 <option selected="selected">...</option>
                                 <option name="statut_equipement">en stock</option>
                                 <option name="statut_equipement">empruntes</option>
                                 <option name="statut_equipement">en reparation</option>
                             </select>
-                        </div> 
+                    </div> 
+                    <div class="col md-5">
+                    <label  class="form-label"> Type d'equipements:</label>
+                        <div class="col-sm-12">
+                           <?php recuperer_id_type_equi();
+
+                           ?>
+                        </div>  
+                    </div>
+                    <div class="col md-9">
+                    <label  class="form-label" name="nom_type_equi"> Nom type d'equipements:</label>
+                        <div class="col-sm-12">
+                           <?php 
+                           echo $nom_type_equi;?>
+                        </div>  
+                    </div>
+                    
                         <div class="col md-5 pt-4">
                             <input type="submit" value="enregistrer" name="btnEnregistrer_equipement" class="btn btn-primary m-3 col-12">
                         </div>
@@ -135,4 +221,4 @@ h1{
         </div>
 
 </body>
-</html>
+</html>''

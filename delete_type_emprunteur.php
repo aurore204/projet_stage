@@ -7,16 +7,16 @@
 </head>
 <body>
 <?php
-    $id_equipement="";
+    $ID_type_emprunteur="";
 try{
     include("connexion.php");
-    $id_equipement=$_GET['id_equi'];
-    $sql="DELETE FROM equipement where id_equipement=:id";
+    $ID_type_emprunteur=$_GET['ID'];
+    $sql="DELETE FROM type_emprunteur where ID_type_emprunteur=:ID";
     $sql=$db->prepare($sql);
-    $sql->bindvalue(':id',$id_equipement);
+    $sql->bindvalue(':ID',$ID_type_emprunteur);
     $sql->execute();
     if($sql){
-        header("location:liste_equipement");
+        header("location:listetype_emprt");
     }else{
         echo"Failed to delete";
     } $sql->closecursor();

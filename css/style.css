@@ -11,6 +11,7 @@
 }
 body{
     height:180vh ;
+    width: 220vh;
     display: flex;
     flex-direction: column;
 }/*VOICI LE STYLE DE L INVENTAIRE*/
@@ -23,7 +24,9 @@ main{
     display: flex;
     gap:3em;
     background-color: #dde6ed;
-    margin-top: -9%;
+    margin-top: -7%;
+    width: 220vh;
+
 }
 .main--content{
     position :relative;

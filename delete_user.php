@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>delete_utilisateur</title>
 </head>
 <body>
 <?php
-    $id_equipement="";
+    $id_user="";
 try{
     include("connexion.php");
-    $id_equipement=$_GET['id_equi'];
-    $sql="DELETE FROM equipement where id_equipement=:id";
+    $id_user=$_GET['id'];
+    $sql="DELETE FROM user where id_user=:id";
     $sql=$db->prepare($sql);
-    $sql->bindvalue(':id',$id_equipement);
+    $sql->bindvalue(':id',$id_user);
     $sql->execute();
     if($sql){
-        header("location:liste_equipement");
+        header("location:liste_user.php");
     }else{
         echo"Failed to delete";
     } $sql->closecursor();

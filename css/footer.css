@@ -5,10 +5,16 @@
   height: 12vh;
   width:100%;
 }
-h4{
+h5{
   text-align: center;
   color:white;
+  font-family: "times new roman";
 
+}
+.footer a{
+  text-decoration: none;
+  color:black;
+  font-family: "times new roman";
 }
 /*fin de page*/
 .oui{

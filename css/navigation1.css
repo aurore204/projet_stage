@@ -1,121 +1,157 @@
-/*la barre de navigation*/
-
-.sidebar{
-    top:0;
-    left:0;
-    bottom:0;
-    padding:0  1.7rem;
-    height:147vh;
+/* La barre de navigation */
+.sidebar {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0 1.7rem;
+    height: 154vh;
     width: 120px;
-    outline:none;
+    outline: none;
     transition: all 0.5s linear;
-    overflow:hidden;
-    background-color:#27374d;
+    overflow: hidden;
+    background-color: #27374d;
+}
 
+.sidebar:hover {
+    width: 330%;
+    transition: 0.2s;
 }
-.sidebar:hover{
-width: 290px;
-transition: 0.5s;;
-}
-.align{
+
+.align {
     display: flex;
     flex-direction: row;
-    gap:3.5em;
-    color:white;
+    gap: 3.5em;
+    color: white;
 }
 
-.menu{
-    height:90%;
-    position:relative;
-    list-style: none;
-    padding:0;
+/* Dropdown */
+/* Style du dropdown */
+.dropdown {
+    position: relative;
+    text-align: center; /* Pour placer le dropdown au milieu de la sidebar */
 }
-.menu li{
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    padding:1rem;
-    margin:8px 0;
-    border-radius: 8px;
-    transition:all 0.5s ease-in-out;
-    list-style-type:none;
-}
-.menu li:hover{
-    background-color: #e0e0e058;
-    width: 170px;
-    
-}
-.active{
-    background-color: #e0e0e058;
-    
-}
-.sec{
+.sub-menu {
     display: none;
+    position: absolute;
+    background-color: #233;
+    border-radius: 10px;
+    top: calc(50% + 5px); /* Ajustez la position verticale du dropdown */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Pour centrer horizontalement */
+    min-width: 120px; /* Ajustez la largeur du dropdown */
+    z-index: 1;
+    margin-top: -20%;
 }
-.firts:hover .sec{
+
+.dropdown:hover .sub-menu {
     display: block;
 }
-.menu a{
-    color:#ffff;
-    font-size:14px;
-    text-decoration:none;
+
+/* Couleur de survol pour les liens du dropdown */
+
+.chevron {
+    cursor: pointer;
     display: flex;
     align-items: center;
-
 }
-.menu a:hover{
-    color:white;}
 
-.menu a span{
+.chevron:hover .fa-chevron-down {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.logout {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.logout:hover {
+    background-color: #f8f9fa;
+}
+
+/* Fin dropdown */
+.menu {
+    height: 90%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+    list-style-type: none;
+}
+
+.sidebar .menu li:hover {
+    background-color: #e0e0e058;
+    width: 200px;
+}
+
+.active {
+    background-color: #e0e0e058;
+}
+
+.sec {
+    display: none;
+}
+
+.firts:hover .sec {
+    display: block;
+}
+
+.menu a {
+    color: #ffff;
+    font-size: 17px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.menu a:hover {
+    color: white;
+}
+
+.menu a span {
     overflow: hidden;
 }
-.menu a i{
-    font-size:1.2rem;
-}
-#utilisateur{
-    margin-top:10%;
-    margin-left: 20%;
-    display: flex;
-    flex-direction:row;
-    gap:3.5em;
-}
-#dropdown .sub-menu a:hover{
-    background-color: #e0e0e058;
-    width: 160px;
-    height: 110%;
-    border-radius: 10%;}
-/*dropdown*/
 
-.sidebar #dropdown .sub-menu li{
-    margin-top: -8px;
-    background-color: #1d1b31;
-    text-align: center;
-    margin-left: -25%;
-    border-radius: 5%;
-    width: 130%;
+.menu a i {
+    font-size: 1.2rem;
+}
+
+.chevron {
     display: flex;
-    gap:0.5em ;
-    height: 62%;
+    flex-direction: row;
+    gap: 0.5em;
 }
-.sidebar #dropdown .sub-menu {
-    display: none;}
-.sidebar .menu li .sub-menu a{
-    color: white;
-    font-size: 17px;
-    padding: 3px 0;
-    white-space: nowrap;
-    opacity: 0.6;
-    display: block;
+
+#dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
 }
-#dropdown:hover .sub-menu{
-    display: block;
-}
-.sidebar .close #dropdown .sub-menu {
-   position: absolute;
-   left: 100%;
-}
-/*fin dropdown*/
+
 .logout {
     position: absolute;
     bottom: 0;
-    left:0;
-    width:100%}
-/*fin de la barre de navigation*/
+    left: 0;
+    width: 100%;
+}
+/* Dropdown */
+
+
+.dropdown:hover #dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.sidebar:hover #dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}

@@ -1,3 +1,33 @@
+<?php session_start(); 
+// Vérification des informations d'identification de l'utilisateur
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Récupération du mot de passe et du rôle soumis par le formulaire de connexion
+    $password = $_POST['password'];
+    $role = $_POST['role'];
+
+    // Vérification du mot de passe et du rôle (exemple simplifié)
+    // Vous devez implémenter votre propre logique de vérification des informations d'identification
+    if ($password === 'mot_de_passe' && $role === 'admin') {
+        // Démarrage de la session
+        session_start();
+
+        // Enregistrement des données de session
+        $_SESSION['role'] = $role;
+
+        // Redirection vers la page appropriée en fonction du rôle
+        if ($role === 'admin') {
+            header('Location: admin_session.php');
+            exit;
+        } elseif ($role === 'utilisateur') {
+            header('Location: utilisateur_session.php');
+            exit;
+        }
+    } else {
+        // Les informations d'identification sont incorrectes, vous pouvez afficher un message d'erreur ou effectuer une autre action appropriée
+        echo 'Identifiants invalides.';
+    }
+}
+?>?>
 <?php
         $link = mysqli_connect("127.0.0.1", "root", "", "projet_stage");
 //$link est l’identifiant de lien retourne par la fonction mysqli_connect
@@ -41,7 +71,7 @@ if(isset($_POST['envoyer'])){
     
      <div class="container">
             <div class="box form-box">
-                <header>BIENVENUE <img src="../PROJETS/ime.png" alt="ime" class="image"width="50%"/></header>
+                <header>BIENVENUE </h4><img src="../PROJETS/ime.png" alt="ime" class="image"width="50%"/></header>
                 
                 <form login="form" method="POST" action="login.php" >
                     <div class="field input">
@@ -56,7 +86,7 @@ if(isset($_POST['envoyer'])){
                         <label  for="password">entrer le password:</label>
                         <input type ="password" placeholder="entrer le mot de passe" name="mot_passe" id="username" >
                     </div>    
-                    <a href="accueil.php"class="btn btn-primary  custom-width">Mon bouton</a>
+                    <a href="accueil.php"class="btn btn-danger  custom-width" id="enre">se connecter</a>
                 </form>
             </div>
         </div>   

@@ -102,3 +102,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])) {
     </div>
 </body>
 </html>
+$sql = "SELECT emprunteur.matricule_emprunteur, emprunteur.nom_emprunteur, emprunteur.prenom_emprunteur, emprunteur.tel_emprunteur, emprunteur.code_fil, type_emprunteur.nom_type_emprunteur
+        FROM emprunteur, type_emprunteur, filiere
+        WHERE emprunteur.ID_type_emprunteur = type_emprunteur.ID_type_emprunteur
+        AND emprunteur.code_fil = filiere.code_fil"; 

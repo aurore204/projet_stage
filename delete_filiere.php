@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>delete filiere</title>
 </head>
 <body>
 <?php
-    $id_equipement="";
+    $code_fil="";
 try{
     include("connexion.php");
-    $id_equipement=$_GET['id_equi'];
-    $sql="DELETE FROM equipement where id_equipement=:id";
+    $code_fil=$_GET['code'];
+    $sql="DELETE FROM filiere where code_fil=:code";
     $sql=$db->prepare($sql);
-    $sql->bindvalue(':id',$id_equipement);
+    $sql->bindvalue(':code',$code_fil);
     $sql->execute();
     if($sql){
-        header("location:liste_equipement");
+        header("location:liste_filiere.php");
     }else{
         echo"Failed to delete";
     } $sql->closecursor();

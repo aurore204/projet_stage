@@ -1,5 +1,4 @@
 /*Import Google fontlink*/
-         @import url("https://fonts.googleapis.com/css2? family=poppins:wght@400;600&display=swap");
       *{
             margin:0;
             padding:0;
@@ -9,15 +8,17 @@
         }
         /* style de la page index*/
           body{
-                background-image:linear-gradient(to right,#fff,#6565eb,#ca8585,#fff,#8d8df3,#27374d ,#6565eb);
-                background-size: 200% auto ;
-                animation:animateBackground 10s linear infinite;
+                background-color:#083068;
+               
             }
             .container{
                 display:flex;
                 align-items: center;
                 justify-content:center;
                 min-height:150vh;
+            }
+            form label{
+                color:#083068;
             }
             /*fieldset{
                 background-color:#27374d;
@@ -28,7 +29,7 @@
             }*/
             .box{
                 background-color:white;
-                padding:75px 75px;
+                padding:85px 95px;
                 border-radius:20px;
                 height:150%;
             }
@@ -38,7 +39,7 @@
                 margin:0px 10px;
             }
             .form-box header{
-                border-bottom: 1px solid #e6e6e6;
+                border-bottom: 2px solid #e6e6e6;
                 margin-bottom:10px;
                 padding-bottom:10px;
             }
@@ -49,23 +50,22 @@
             }
             .form-box form .input input{
                 height: 40px;
-                width:100%;
-                border-radius:5px;
+                width:115%;
+                border-radius:10px;
             }
             #enre{
                 height: 40px;
-                background-color:rgba(76, 68, 182, 0.808);
-                border-radius:5px;
+                width: 115%;
+                border-radius:10px;
                 color:#ffff;
                 margin-top: 10px;
-                transition: all .3s;
-                font-size: 15px;
+                font-size: 20px;
             }
-            h1{
-                text-align:center;
-                margin-top:10%;
+            h4{
+                
             }.image{
-                width: 50%;
+                width: 60%;
+                margin-top: -10%;
             }
             .custom-width {
                 width: 100%;
