@@ -1,7 +1,7 @@
 <html>
 <head >
     <meta name="viewport"content="width-device-width,initial-acale+1.0">
-    <link rel= "stylesheet"href="css/navigation_user.css"type="text/css">
+    <link rel= "stylesheet"href="css/navigation.css"type="text/css">
     <link rel="stylesheet" href="fontawesome-free-6.4.2-web\css\all.min.css">
     <link rel="stylesheet" href="bootstrap-5.1.3-dist\css\bootstrap.css">
 
@@ -9,14 +9,7 @@
 </head>
 <body>
 <div class="sidebar close">
-        <ul class="menu">
-            <li >
-                <a href="#" >
-                <div class="align">
-                    <i class="fa fa-tachometer-alt" style="font-size:20px"></i>
-                    <span><a href="accueil.php" class="item">Dashboard</a></span>
-                </a>
-            </li> 
+        <ul class="menu"> 
             <li>
                 <div class="align">
                     <i class="fas fa-table" class="icon" style="font-size:20px"></i> <!-- Icône Font Awesome pour la gestion des emprunts -->
@@ -33,7 +26,7 @@
                 </div>
             </li>
 
-            <li>
+            <li class="active">
                 <div class="align">
                     <i class="fas fa-desktop"  class="icon"style="font-size:20px"></i>
                     <span><a href="liste_equipement.php" class="item">Gestion des equipements </a></span>
@@ -71,9 +64,9 @@
                         </div>
                         <ul class="sub-menu">
                             <li><a href="#"><i class="fas fa-exclamation-triangle"></i> Gestion des pannes</a></li>
-                            <li><a href="lsts_materiels.php"><i class="fas fa-users"></i> Gestion des interventionnaires</a></li>
-                            <li><a href="lsts_materiels.php"><i class="fas fa-wrench"></i> Gestion des interventions</a></li>
-                            <li><a href="lsts_materiels.php"><i class="fas fa-snowflake"></i> Gestion des climatiseurs</a></li>
+                            <li><a href="lsts_interventionnaires.php"><i class="fas fa-users"></i> Gestion des interventionnaires</a></li>
+                            <li><a href="lsts_interventions.php"><i class="fas fa-wrench"></i> Gestion des interventions</a></li>
+                            <li><a href="lsts_climatiseurs.php"><i class="fas fa-snowflake"></i> Gestion des climatiseurs</a></li>
 
 
                         </ul>  
@@ -88,16 +81,10 @@
                     </div>
                 </a>
             </li>
-            <li  class="active">
-                <div class="align">
-                    <i class="fas fa-users" class="icon" style="font-size:20px"></i> <!-- Icône Font Awesome pour la gestion des emprunts -->
-                    <span><a href="liste_user.php" class="item">Gestion des utilisateurs</a></span>
-                </div>
-            </li>
             <li class="logout">
                 <div class="align">
                     <i class="fa fa-sign-out-alt"  class="icon"style="font-size:20px"></i>
-                    <span><a href="logout.php" class="item">Logout</a></span>
+                    <span><a href="logout.php" class="item">Deconnexion</a></span>
                     <script src="https:cdn.jsdelivr.net/npm/@popperjs/core@2..min.js/10.2/dist/umd/popper"></script>
                     <script src="bootstrap-5.1.3-dist\js\bootstrap.min.js"></script>
                 </div>

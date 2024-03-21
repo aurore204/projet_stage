@@ -1,4 +1,11 @@
+<html>
+    <head>
+        <title>se connecter</title>
+        <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/login.css" type="text/css">
+    </head>
 <?php session_start(); 
+include("connexion.php");
 // Vérification des informations d'identification de l'utilisateur
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupération du mot de passe et du rôle soumis par le formulaire de connexion
@@ -15,41 +22,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['role'] = $role;
 
         // Redirection vers la page appropriée en fonction du rôle
-        if ($role === 'admin') {
-            header('Location: admin_session.php');
-            exit;
-        } elseif ($role === 'utilisateur') {
-            header('Location: utilisateur_session.php');
-            exit;
-        }
-    } else {
-        // Les informations d'identification sont incorrectes, vous pouvez afficher un message d'erreur ou effectuer une autre action appropriée
-        echo 'Identifiants invalides.';
-    }
+        
 }
-?>?>
-<?php
-        $link = mysqli_connect("127.0.0.1", "root", "", "projet_stage");
-//$link est l’identifiant de lien retourne par la fonction mysqli_connect
-// c’est une ressource
-/* Verification de la connexion */
-if (mysqli_connect_errno()) {
- echo("Echec de la connexion :" . mysqli_connect_error());
- exit();}
- mysqli_select_db($link, "projet_stage");
-/*fin verification*/
+
+  
 $id="";
 $nom="";
 $numero="";
 $mot_passe="";
 //insertion dans la base de donnees//
 if(isset($_POST['envoyer'])){
-    if(isset($_POST['nom']) AND isset($_POST['numero']) AND isset($_POST['motpasse'])){
+    if(isset($_POST['nom']) AND isset($_POST['numero']) AND isset($_POST['mot_passe'])){
             $id="";
             $nom=$_POST['nom'];
             $numero=$_POST['numero'];
             $mot_passe=$_POST['mot_passe'];
-            $_query="INSERT INTO users(id,nom,numero,mot_passe) VALUES('$id','$nom','$numero','$mot_passe')";
+            if ($mot_passe === 'admin') {
+                header('Location: accueil.php');
+                exit;
+            } elseif ($mot_passe === 'utilisateur') {
+                header('Location: utilisateur_session.php');
+                exit;
+            }
+        } else {
+            // Les informations d'identification sont incorrectes, vous pouvez afficher un message d'erreur ou effectuer une autre action appropriée
+            echo 'Identifiants invalides.';
+        }
 
                 }}
 
@@ -61,14 +59,15 @@ if(isset($_POST['envoyer'])){
 //}
 //mysqli_close($link);//
         ?>
-<html>
-    <head>
-        <title></title>
-        <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/login.css" type="text/css">
-    </head>
+
     <body>
-    
+        <?php
+    $id="";
+    $nom="";
+    $numero="";
+    $mot_passe="";
+    //insertion dans la base de donnees//
+ ?>
      <div class="container">
             <div class="box form-box">
                 <header>BIENVENUE </h4><img src="../PROJETS/ime.png" alt="ime" class="image"width="50%"/></header>
@@ -86,7 +85,7 @@ if(isset($_POST['envoyer'])){
                         <label  for="password">entrer le password:</label>
                         <input type ="password" placeholder="entrer le mot de passe" name="mot_passe" id="username" >
                     </div>    
-                    <a href="accueil.php"class="btn btn-danger  custom-width" id="enre">se connecter</a>
+                    <input type="submit" class="btn btn-danger  custom-width" name="envoyer" value="se connecter" id="enre">
                 </form>
             </div>
         </div>   
