@@ -7,6 +7,46 @@
     <link rel="stylesheet" href="fontawesome-free-6.4.2-web\css\all.min.css">
     <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.min.css">
     <title>Page d'accueil avec dashboard</title>
+    <?php
+    function compter_nbre_emprunts(){
+include('connexion.php');
+
+// Compter le nombre d'équipements
+$sql = "SELECT COUNT(*) AS count FROM emprunt";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+$result = $stmt->fetch();
+
+    $nombre_emprunts = $result['count'];
+    echo $nombre_emprunts;
+}
+
+
+function compter_nbre_user(){
+include('connexion.php');
+
+// Compter le nombre d'équipements
+$sql = "SELECT COUNT(*) AS count FROM user";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+$result = $stmt->fetch();
+
+    $nombreuser = $result['count'];
+    echo $nombreuser;}
+
+
+    function compter_nbre_filieres(){
+        include('connexion.php');
+        
+        // Compter le nombre d'équipements
+        $sql = "SELECT COUNT(*) AS count FROM filiere";
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetch();
+        
+            $nombre_filiere= $result['count'];
+            echo $nombre_filiere;}
+?>
 </head>
 <body>
     <?php
@@ -24,18 +64,18 @@
                         <div class="dashbord">
                             <div class="card--header">
                                 <div class="amount">
-                                    <span class="tittle">videos projecteurs presents</span>
-                                    <span class="vp-values">10</span> 
-                                    <i class="fas fa-tv icon"></i>
+                                    <span class="tittle">Nombre d'emprunts</span>
+                                    <span class="vp-values"><?php compter_nbre_emprunts(); ?></span> 
+                                    <i class="fas fa-handshake icon"></i>
                                 </div>
                             </div>
                         </div>   
                         <div class="dashbord">
                             <div class="card--header">
                                 <div class="amount">
-                                    <span class="tittle">videos projecteurs empruntes</span>
-                                    <span class="vp-values">5</span> 
-                                    <i class="fas fa-tv icon"></i>
+                                    <span class="tittle">Nombre de filieres</span>
+                                    <span class="vp-values"><?php compter_nbre_filieres(); ?></span> 
+                                    <i class="fas fa-university icon"></i>
                                 </div>
                                 
                             </div>

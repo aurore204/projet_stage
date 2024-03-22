@@ -107,31 +107,31 @@ h1{
                         <div class="col md-6">
                         <label  class="col-sm-5 control-label">Nom utilisateur:</label>
                             <div class="col-sm-12">
-                                <input type="text "name="nom_user" placeholder="ecrivez" class="form-control" id="input2">
+                                <input type="text "name="nom_user" placeholder="ecrivez" class="form-control" id="input2" required>
                             </div>
                         </div>
                         <div class="col md-6">
                         <label  class="col-sm-5 control-label">Prenom utilisateur:</label>
                             <div class="col-sm-12">
-                                <input type="text "name="prenom_user" placeholder="ecrivez" class="form-control" id="input2">
+                                <input type="text "name="prenom_user" placeholder="ecrivez" class="form-control" id="input2" required>
                             </div>
                         </div>
                         <div class="col md-6">
                         <label  class="col-sm-5 control-label">Telephone utilisateur:</label>
                             <div class="col-sm-12">
-                                <input type="text "name="tel_user" placeholder="ecrivez" class="form-control" id="input2">
+                                <input type="text "name="tel_user" placeholder="ecrivez" class="form-control" id="input2" required>
                             </div>
                         </div>
                         <div class="col md-6">
                         <label  class="col-sm-5 control-label">Mot de passe utilisateur:</label>
                             <div class="col-sm-12">
-                                <input type="password" name="mot_passe_user" placeholder="ecrivez" class="form-control" id="input2">
+                                <input type="password" name="mot_passe_user" placeholder="ecrivez" class="form-control" id="input2" required>
                             </div>
                         </div>
                         <div class="col md-6">
                         <label  class="col-sm-5 control-label">role utilisateur:</label>
                             <div class="col-sm-12">
-                                <input type="text "name="role_user" placeholder="ecrivez" class="form-control" id="input2">
+                                <input type="text "name="role_user" placeholder="ecrivez" class="form-control" id="input2" required>
                             </div>
                         </div>
                         <div>

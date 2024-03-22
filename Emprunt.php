@@ -120,17 +120,13 @@ function soustraire_equipement(){
         try {
             
             // Requête pour mettre à jour le nombre d'équipements disponibles
-            $sql = "UPDATE equipement SET quantite_stock_equipement = quantite_stock_equipement - 1 WHERE id_equipement = :id_equipement";
-            $sql = $db->prepare($sql);
-            $sql->bindvalue(':id_equipement', $id_equipement);
+            $sql="UPDATE equipement SET quantite_stock_equipement = quantite_stock_equipement - 1 WHERE id_equipement = :id";
+            $sql=$db->prepare($sql);
+            $sql->bindvalue(':id',$id_equipement);
             $sql->execute();
-            
-            // Fermer la connexion à la base de données
-            $db = null;
-            
-            return true; // Succès : retourner true
-        } catch(PDOException $e) {
-            return false; // Échec : retourner false
+            $sql->closecursor();
+        } catch(Exception $e) {
+            die('Erreur:'.$e->getMessage()); // Échec : retourner false
         }
     }       
 

@@ -87,13 +87,13 @@ h1{
                         <div class="col md-6">
                         <label  class="col-sm-5 control-label">Code de la filiere:</label>
                             <div class="col-sm-12">
-                                <input type="text "name="code_fil" placeholder="ecrivez" class="form-control" id="input2">
+                                <input type="text "name="code_fil" placeholder="ecrivez" class="form-control" id="input2" required>
                             </div>
                         </div>
                         <div class="col md-6">
                         <label  class="col-sm-5 control-label">Nom de la filiere:</label>
                             <div class="col-sm-12">
-                                <input type="text "name="nom_fil" placeholder="ecrivez" class="form-control" id="input2">
+                                <input type="text "name="nom_fil" placeholder="ecrivez" class="form-control" id="input2" required>
                             </div>
                         </div>
                         <div>

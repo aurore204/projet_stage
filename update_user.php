@@ -157,37 +157,37 @@ h1{
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">Id de l'utilisateru:</label>
                         <div class="col-sm-12">
-                            <input type="text "placeholder="ecrivez" name="id_user" class="form-control" id="input2 " value="<?php echo $_GET['id'];?>">
+                            <input type="text "placeholder="ecrivez" name="id_user" class="form-control" id="input2 " value="<?php echo $_GET['id'];?>" required>
                         </div>
                     <div>
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">nom de l'utilisateur:</label>
                         <div class="col-sm-12">
-                            <input type="text "name="nom_user" placeholder="ecrivez" class="form-control"  value="<?php echo $nom_user;?>" >
+                            <input type="text "name="nom_user" placeholder="ecrivez" class="form-control"  value="<?php echo $nom_user;?>" required>
                         </div>
                     <div>
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">Prenom de l'utilisateur:</label>
                         <div class="col-sm-12">
-                            <input type="text "name="prenom_user" placeholder="ecrivez" class="form-control"  value="<?php echo $prenom_user;?>" >
+                            <input type="text "name="prenom_user" placeholder="ecrivez" class="form-control"  value="<?php echo $prenom_user;?>" required>
                         </div>
                     </div>
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">Tel de l'utilisateur:</label>
                         <div class="col-sm-12">
-                            <input type="text "name="tel_user" placeholder="ecrivez" class="form-control"  value="<?php echo $tel_user;?>">
+                            <input type="text "name="tel_user" placeholder="ecrivez" class="form-control"  value="<?php echo $tel_user;?>" required>
                         </div>
                     </div>
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">Mot de passe l'utilisateur:</label>
                         <div class="col-sm-12">
-                            <input type="text "name="mot_passe_user" placeholder="ecrivez" class="form-control"  value="<?php echo $mot_passe_user;?>">
+                            <input type="text "name="mot_passe_user" placeholder="ecrivez" class="form-control"  value="<?php echo $mot_passe_user;?>" required>
                         </div>
                     </div>
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">Role de l'utilisateur:</label>
                         <div class="col-sm-12">
-                            <input type="text "name="role_user" placeholder="ecrivez" class="form-control"  value="<?php echo $role_user;?>">
+                            <input type="text "name="role_user" placeholder="ecrivez" class="form-control"  value="<?php echo $role_user;?>" required>
                         </div>
                     </div>
                         <div class="col md-5 pt-4">

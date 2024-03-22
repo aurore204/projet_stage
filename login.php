@@ -7,7 +7,7 @@
 <?php session_start(); 
 include("connexion.php");
 // Vérification des informations d'identification de l'utilisateur
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+/*if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupération du mot de passe et du rôle soumis par le formulaire de connexion
     $password = $_POST['password'];
     $role = $_POST['role'];
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Redirection vers la page appropriée en fonction du rôle
         
-}
+    }*/
 
   
 $id="";
@@ -37,10 +37,10 @@ if(isset($_POST['envoyer'])){
             $nom=$_POST['nom'];
             $numero=$_POST['numero'];
             $mot_passe=$_POST['mot_passe'];
-            if ($mot_passe === 'admin') {
+            if ($mot_passe === 'admin' && $nom=='kouosseu') {
                 header('Location: accueil.php');
                 exit;
-            } elseif ($mot_passe === 'utilisateur') {
+            } elseif ($mot_passe === 'utilisateur' && $nom=='ndjapa') {
                 header('Location: utilisateur_session.php');
                 exit;
             }
@@ -49,7 +49,7 @@ if(isset($_POST['envoyer'])){
             echo 'Identifiants invalides.';
         }
 
-                }}
+                }
 
 //if($motpasse=$_resul){
     /*header('location:accueil.php');*/
@@ -75,15 +75,15 @@ if(isset($_POST['envoyer'])){
                 <form login="form" method="POST" action="login.php" >
                     <div class="field input">
                        <label  for="username" >entrer votre nom:</label>
-                        <input type ="text" placeholder="entrer votre nom" name="nom" id="username">
+                        <input type ="text" placeholder="entrer votre nom" name="nom" id="username" required>
                     </div>
                     <div class="field input">
                         <label for="">entrer votre numero:</label>
-                        <input type ="text" placeholder="entrer votre numero" name="numero" id="username">
+                        <input type ="text" placeholder="entrer votre numero" name="numero" id="username" required>
                     </div>
                     <div class="field input">
                         <label  for="password">entrer le password:</label>
-                        <input type ="password" placeholder="entrer le mot de passe" name="mot_passe" id="username" >
+                        <input type ="password" placeholder="entrer le mot de passe" name="mot_passe" id="username" required >
                     </div>    
                     <input type="submit" class="btn btn-danger  custom-width" name="envoyer" value="se connecter" id="enre">
                 </form>

@@ -128,13 +128,13 @@ h1{
                         <div class="form-group">
                             <label for="input1" class="col-sm-5 control-label">Code de la filiere:</label>
                             <div class="col-sm-12">
-                                <input type="text "name="code_fil" placeholder="ecrivez" class="form-control" id="input1" value="<?php echo $_GET['code'] ;?>">
+                                <input type="text "name="code_fil" placeholder="ecrivez" class="form-control" id="input1" value="<?php echo $_GET['code'] ;?>" required>
                             <div>
                         </div>
                         <div class="form-group">
                         <label for="input2" class="col-sm-5 control-label">nom de la filiere:</label>
                             <div class="col-sm-12">
-                                <input type="text "name="nom_fil" placeholder="ecrivez" class="form-control" id="input2" value="<?php echo $nom_fil;?>">
+                                <input type="text "name="nom_fil" placeholder="ecrivez" class="form-control" id="input2" value="<?php echo $nom_fil;?>" required>
                             <div>
                         </div>
                             <div class="col md-5 pt-4">

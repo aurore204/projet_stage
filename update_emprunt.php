@@ -143,15 +143,11 @@
                     $sql = $db->prepare($sql);
                     $sql->bindvalue(':id_equipement', $id_equipement);
                     $sql->execute();
-                    
-                    // Fermer la connexion à la base de données
-                    $db = null;
-                    
-                    return true; // Succès : retourner true
-                } catch(PDOException $e) {
-                    return false; // Échec : retourner false
+                    $sql->closecursor();
+                } catch(Exception $e) {
+                    die('Erreur:'.$e->getMessage()); // Échec : retourner false
                 }
-            }     
+            }       
         
 
         function Modification_emprunt(){
@@ -300,7 +296,7 @@ h1{
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">id de l'emprunt:</label>
                         <div class="col-sm-12">
-                            <input type="text "placeholder="ecrivez" name="id_emprunt" class="form-control" id="input2 "  value="<?php echo isset($_GET['id']) ? $_GET['id'] : $id_emprunt; ?>">
+                            <input type="text "placeholder="ecrivez" name="id_emprunt" class="form-control" id="input2 "  value="<?php echo isset($_GET['id']) ? $_GET['id'] : $id_emprunt; ?>" required>
                         </div>
                     <div>
                     <div class="col md-5">
@@ -308,29 +304,29 @@ h1{
                            <?php recuperer_matricule_emprunteur();?>
                     <div class="col md-9">
                     <label  class="form-label" name="nom_emprunteur"> Nom de l'emprunteur:</label>
-                        <input type="text "name="" placeholder="ecrivez"  value="<?php echo $nom_emprunteur;?>">
+                        <input type="text "name="" placeholder="ecrivez"  value="<?php echo $nom_emprunteur;?>" required>
                     <div class="col md-5">
                     <label  class="form-label" name="id_equipement"  value="<?php echo $id_equipement;?>"> ID_equipement:</label>
                            <?php recuperer_id_equipement();?>
                     <div class="col md-9">
                     <label  class="form-label" name="nom_equipement"> Nom de l'equipement:</label>
-                            <input type="text "name="" placeholder="ecrivez"  value="<?php echo $nom_equipement;?>">
+                            <input type="text "name="" placeholder="ecrivez"  value="<?php echo $nom_equipement;?>" required>
                        
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">statut de l'emprunt:</label>
                         <div class="col-sm-12">
-                            <input type="text "name="statut_emprunt" placeholder="ecrivez" class="form-control" id="input2" value="<?php echo $statut_emprunt;?>">
+                            <input type="text "name="statut_emprunt" placeholder="ecrivez" class="form-control" id="input2" value="<?php echo $statut_emprunt;?>" required>
                         </div>
                     <div>
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">date d'emprunt:</label>
                         <div class="col-sm-12">
-                            <input type="time" name="date_emprunt" class="form-control" id="input2" value="<?php echo $date_emprunt;?>">
+                            <input type="time" name="date_emprunt" class="form-control" id="input2" value="<?php echo $date_emprunt;?>" required>
                     </div>
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">Date retour:</label>
                         <div class="col-sm-12">
-                            <input type="time"name="date_retour" placeholder="ecrivez" class="form-control" id="input2" value="<?php echo $date_retour;?>">
+                            <input type="time"name="date_retour" placeholder="ecrivez" class="form-control" id="input2" value="<?php echo $date_retour;?>" required>
                     </div>  
                     </div>
                     <div class="col md-5">

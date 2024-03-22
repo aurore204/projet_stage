@@ -88,12 +88,12 @@ h1{
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">Nom Type emprunteur:</label>
                         <div class="col-sm-12">
-                            <input type="text "name="nom_type_emprunteur" placeholder="ecrivez" class="form-control" id="input2">
+                            <input type="text "name="nom_type_emprunteur" placeholder="ecrivez" class="form-control" id="input2" required>
                         </div>
                     <div>
                     </div>
                         <div class="col md-5 pt-4">
-                            <input type="submit" value="enregistrer" name="btnEnregistrer_type_emprunteur" class="btn btn-primary m-3 col-12">
+                            <input type="submit" value="enregistrer" name="btnEnregistrer_type_emprunteur" class="btn btn-primary m-3 col-12" required>
                         </div>
                     </div>
                 </form>

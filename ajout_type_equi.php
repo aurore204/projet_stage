@@ -84,11 +84,11 @@ h1{
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">nom du type equipement:</label>
                         <div class="col-sm-12">
-                            <input type="text "name="nom_type_equi" placeholder="ecrivez" class="form-control" id="input2">
+                            <input type="text "name="nom_type_equi" placeholder="ecrivez" class="form-control" id="input2" required>
                         </div>
                     </div>
                         <div class="col md-5 pt-4">
-                            <input type="submit" value="enregistrer" name="btnEnregistrer_type_equipement" class="btn btn-primary m-3 col-12">
+                            <input type="submit" value="enregistrer" name="btnEnregistrer_type_equipement" class="btn btn-primary m-3 col-12" required>
                         </div>
                     </div>
                 </form>

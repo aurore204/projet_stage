@@ -183,18 +183,18 @@
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">nom du materiel:</label>
                         <div class="col-sm-12">
-                            <input type="text" name="nom_equipement" placeholder="ecrivez" class="form-control" value ="<?php echo $nom_equipement; ?>" id="input2">
+                            <input type="text" name="nom_equipement" placeholder="ecrivez" class="form-control" value ="<?php echo $nom_equipement; ?>" id="input2" required>
                         </div>
                     <div>
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">Quantite initial des equipements:</label>
                         <div class="col-sm-12">
-                            <input type="text" name="quantite_equipement" placeholder="ecrivez" value ="<?php echo $quantite_equipement; ?>" class="form-control" id="input2">
+                            <input type="text" name="quantite_equipement" placeholder="ecrivez" value ="<?php echo $quantite_equipement; ?>" class="form-control" id="input2" required>
                     </div>
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">Quantite en stock des equipements:</label>
                         <div class="col-sm-12">
-                            <input type="text" name="quantite_stock_equipement" placeholder="ecrivez" class="form-control" value ="<?php echo $quantite_stock_equipement; ?>" id="input2">
+                            <input type="text" name="quantite_stock_equipement" placeholder="ecrivez" class="form-control" value ="<?php echo $quantite_stock_equipement; ?>" id="input2" required>
                     </div>  
                     </div>
                     <div  class="col md-5">

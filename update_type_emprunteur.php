@@ -128,13 +128,13 @@ h1{
                         <div class="form-group">
                             <label for="input1" class="col-sm-5 control-label">ID type emprunteur:</label>
                             <div class="col-sm-12">
-                                <input type="text "name="ID_type_emprunteur" placeholder="ecrivez" class="form-control" id="input1" value="<?php echo $_GET['ID'] ;?>">
+                                <input type="text "name="ID_type_emprunteur" placeholder="ecrivez" class="form-control" id="input1" value="<?php echo $_GET['ID'] ;?>" required>
                             <div>
                         </div>
                         <div class="form-group">
                         <label for="input2" class="col-sm-9 control-label">nom du type d'emprunteur:</label>
                             <div class="col-sm-12">
-                                <input type="text "name="nom_type_emprunteur" placeholder="ecrivez" class="form-control" id="input2" value="<?php echo $nom_type_emprunteur;?>">
+                                <input type="text "name="nom_type_emprunteur" placeholder="ecrivez" class="form-control" id="input2" value="<?php echo $nom_type_emprunteur;?>" required>
                             <div>
                         </div>
                             <div class="col md-5 pt-4">

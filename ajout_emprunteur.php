@@ -197,25 +197,25 @@ h1{
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">Matricule de l'emprunteur:</label>
                         <div class="col-sm-12">
-                            <input type="text "name="matricule_emprunteur" placeholder="ecrivez" value="<?php echo $matricule_emprunteur;?>" class="form-control" id="input2">
+                            <input type="text "name="matricule_emprunteur" placeholder="ecrivez" value="<?php echo $matricule_emprunteur;?>" class="form-control" id="input2" required>
                         </div>
                     <div>
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">nom de l'emprunteur:</label>
                         <div class="col-sm-12">
-                            <input type="text "name="nom_emprunteur" placeholder="ecrivez" value="<?php echo $nom_emprunteur;?>" class="form-control" id="input2">
+                            <input type="text "name="nom_emprunteur" placeholder="ecrivez" value="<?php echo $nom_emprunteur;?>" class="form-control" id="input2" required>
                         </div>
                     <div>
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">Prenom de l'emprunteur:</label>
                         <div class="col-sm-12">
-                            <input type="text "name="prenom_emprunteur" placeholder="ecrivez" class="form-control" value="<?php echo $prenom_emprunteur;?>" id="input2">
+                            <input type="text "name="prenom_emprunteur" placeholder="ecrivez" class="form-control" value="<?php echo $prenom_emprunteur;?>" id="input2" required>
                         </div>
                     <div>
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">Tel de l'emprunteur:</label>
                         <div class="col-sm-12">
-                            <input type="text "name="tel_emprunteur" placeholder="ecrivez" value="<?php echo $tel_emprunteur;?>" class="form-control" id="input2">
+                            <input type="text "name="tel_emprunteur" placeholder="ecrivez" value="<?php echo $tel_emprunteur;?>" class="form-control" id="input2" required>
                         </div>
                     <div class="col md-5">
                     <label  class="form-label"> Type d'emprunteur:</label>
