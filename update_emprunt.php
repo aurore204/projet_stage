@@ -135,13 +135,16 @@
         }
 
         function Ajout_equipement(){
-            global $id_equipement,$quantite_stock_equipement;
+            global $id_equipement,$quantite_stock_equipement,$nom_equipement;
                 try {
-                    
+                    include("connexion.php");
+
                     // Requête pour mettre à jour le nombre d'équipements disponibles
-                    $sql = "UPDATE equipement SET quantite_stock_equipement = quantite_stock_equipement + 1 WHERE id_equipement = :id_equipement";
+                    $sql = "UPDATE equipement SET quantite_stock_equipement = quantite_stock_equipement + 1 WHERE id_equipement = :id_equipement and nom_equipement=:nom ";
                     $sql = $db->prepare($sql);
                     $sql->bindvalue(':id_equipement', $id_equipement);
+                    $sql->bindvalue(':nom', $nom_equipement);
+
                     $sql->execute();
                     $sql->closecursor();
                 } catch(Exception $e) {
