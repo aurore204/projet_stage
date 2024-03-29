@@ -163,7 +163,7 @@
             $sql->bindvalue(':id',$id_emprunt);
             $sql->bindvalue(':id_equi',$id_equipement);
             $sql->bindvalue(':matricule',$matricule_emprunteur);
-            $sql->bindvalue('statut',$statut_emprunt);
+            $sql->bindvalue(':statut',$statut_emprunt);
             $sql->bindvalue(':etat',$etat_equipement);
             $sql->bindvalue(':tel',$tel_emprunteur);
             $sql->bindvalue(':date_emprunt',$date_emprunt);
@@ -296,12 +296,7 @@ h1{
                     <h1>Modifier un emprunt</h1>
 
                     <div class="formulaire">
-                    <div class="col md-5">
-                    <label  class="col-sm-5 control-label">id de l'emprunt:</label>
-                        <div class="col-sm-12">
-                            <input type="text "placeholder="ecrivez" name="id_emprunt" class="form-control" id="input2 "  value="<?php echo isset($_GET['id']) ? $_GET['id'] : $id_emprunt; ?>" required>
-                        </div>
-                    <div>
+
                     <div class="col md-5">
                     <label  class="form-label" name="matricule_emprunteur"   value="<?php echo $matricule_emprunteur;?>"> Matricule de l'emprunteur:</label>
                            <?php recuperer_matricule_emprunteur();?>

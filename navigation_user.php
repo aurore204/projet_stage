@@ -66,7 +66,7 @@
                             <li><a href="#"><i class="fas fa-exclamation-triangle"></i> Gestion des pannes</a></li>
                             <li><a href="lsts_interventionnaires.php"><i class="fas fa-users"></i> Gestion des interventionnaires</a></li>
                             <li><a href="lsts_interventions.php"><i class="fas fa-wrench"></i> Gestion des interventions</a></li>
-                            <li><a href="lsts_climatiseurs.php"><i class="fas fa-snowflake"></i> Gestion des climatiseurs</a></li>
+                            <li><a href="liste_clim.php"><i class="fas fa-snowflake"></i> Gestion des climatiseurs</a></li>
 
 
                         </ul>  
