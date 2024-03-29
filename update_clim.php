@@ -86,7 +86,7 @@
             }
             if(isset($_POST['btnModifier_clim'])){
                 Modification_clim();
-                header("location:liste_clim.php");
+                header("location:liste_clim.php"); 
             }
         ?>
 <?php
