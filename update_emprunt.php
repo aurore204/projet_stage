@@ -10,12 +10,12 @@
     <?php
     function recuperer_emprunt(){
 
-        global $id_emprunt,$id_equipement,$statut_emprunt,$etat_equipement,$matricule_emprunteur,$date_emprunt,$date_retour;
+        global $id_emprunt,$nom_equipement,$statut_emprunt,$etat_equipement,$nom_emprunteur,$date_emprunt,$date_retour;
 
     try{
         include("connexion.php");
         // Préparer la requête SQL pour récupérer les informations de l'enregistrement du tableau
-        $sql = "SELECT emprunt.id_emprunt,emprunteur.matricule_emprunteur,equipement.id_equipement,emprunt.statut_emprunt,emprunt.etat_equipement,emprunt.date_emprunt,emprunt.date_retour
+        $sql = "SELECT emprunt.id_emprunt,emprunteur.nom_emprunteur,equipement.nom_equipement,emprunt.statut_emprunt,emprunt.etat_equipement,emprunt.date_emprunt,emprunt.date_retour
         FROM emprunteur,emprunt,equipement WHERE id_emprunt = :id";
         $sql = $db->prepare($sql);
         $sql->bindvalue(':id', $id_emprunt);
@@ -23,8 +23,8 @@
         // recuperer les donnees de l'enregistrement
         while ($donnees=$sql->fetch(PDO::FETCH_ASSOC)){
             $id_emprunt=$donnees['id_emprunt'];
-            $matricule_emprunteur=$donnees['matricule_emprunteur'];
-            $id_equipement=$donnees['id_equipement'];
+            $nom_emprunteur=$donnees['nom_emprunteur'];
+            $nom_equipement=$donnees['nom_equipement'];
             $statut_emprunt=$donnees['statut_emprunt'];
             $etat_equipement=$donnees['etat_equipement'];
             $date_emprunt=$donnees['date_emprunt'];
@@ -44,95 +44,6 @@
     
         }}
 
-        function recuperer_id_equipement(){
-            global $id_equipement;
-            try{
-                include("connexion.php");
-                $sql="SELECT id_equipement from equipement";
-                $sql=$db->prepare($sql);
-                $sql->execute();
-                echo"<SELECT name=\"id_equipement\"onchange=\"submit()\">";
-                $a="";
-                echo'<option value="'.$a.'">'.$a.'</option>';
-                while($donnees=$sql->fetch(PDO::FETCH_ASSOC)){
-                    $a=$donnees['id_equipement'];
-                    if($id_equipement==$a){
-                        echo'<option value="'.$a.'"selected>'.$a.'</option>';
-                    }else{
-                        echo'<option value="'.$a.'">'.$a.'</option>';
-                    }
-                    }
-                    $sql->closecursor();
-                    echo"</select>";
-                }
-            catch(Exception $e){
-                die('Erreur:'.$e->getMessage());
-            }
-        }
-        
-        
-        function recuperer_matricule_emprunteur(){
-            global $matricule_emprunteur;
-            try{
-                include("connexion.php");
-                $sql="SELECT  matricule_emprunteur from emprunteur";
-                $sql=$db->prepare($sql);
-                $sql->execute();
-                echo"<SELECT name=\"matricule_emprunteur\"onchange=\"submit()\">";
-                $a="";
-                echo'<option value="'.$a.'">'.$a.'</option>';
-                while($donnees=$sql->fetch(PDO::FETCH_ASSOC)){
-                    $a=$donnees['matricule_emprunteur'];
-                    if($matricule_emprunteur==$a){
-                        echo'<option value="'.$a.'"selected>'.$a.'</option>';
-                    }else{
-                        echo'<option value="'.$a.'">'.$a.'</option>';
-                    }
-                    }
-                    $sql->closecursor();
-                    echo"</select>";
-                }
-            catch(Exception $e){
-                die('Erreur:'.$e->getMessage());
-            }
-        }
-        
-        function recuperer_nom_equipement(){
-            global $id_equipement,$nom_equipement;
-            try{
-                include("connexion.php");
-                $sql="SELECT nom_equipement from equipement where id_equipement=:id_equi";
-                $sql=$db->prepare($sql);
-                $sql->bindvalue(':id_equi',$id_equipement);
-                $sql->execute();
-                while($donnees=$sql->fetch(PDO::FETCH_ASSOC)){
-                   $nom_equipement=$donnees['nom_equipement'];
-                    }
-                    $sql->closecursor();
-                }
-            catch(Exception $e){
-                die('Erreur:'.$e->getMessage());
-            }
-        }
-        
-        
-        function recuperer_nom_emprunteur(){
-            global $matricule_emprunteur,$nom_emprunteur;
-            try{
-                include("connexion.php");
-                $sql="SELECT nom_emprunteur from emprunteur where matricule_emprunteur=:matricule";
-                $sql=$db->prepare($sql);
-                $sql->bindvalue(':matricule',$matricule_emprunteur);
-                $sql->execute();
-                while($donnees=$sql->fetch(PDO::FETCH_ASSOC)){
-                   $nom_emprunteur=$donnees['nom_emprunteur'];
-                    }
-                    $sql->closecursor();
-                }
-            catch(Exception $e){
-                die('Erreur:'.$e->getMessage());
-            }
-        }
 
         function Ajout_equipement(){
             global $id_equipement,$quantite_stock_equipement,$nom_equipement;
@@ -153,38 +64,46 @@
             }       
         
 
-        function Modification_emprunt(){
-            global $id_emprunt,$id_equipement,$statut_emprunt,$etat_equipement,$matricule_emprunteur,$date_emprunt,$date_retour;
-
-        try{
-            include("connexion.php");
-            $sql="UPDATE emprunt set id_emprunt=:id,id_equipement=:id_equi,statut_emprunt=:statut,etat_equipement=:etat,matricule_emprunteur=:matricule,date_emprunt=:date_emprunt,date_retour=:date_retour WHERE id_emprunt=:id";
-            $sql=$db->prepare($sql);
-            $sql->bindvalue(':id',$id_emprunt);
-            $sql->bindvalue(':id_equi',$id_equipement);
-            $sql->bindvalue(':matricule',$matricule_emprunteur);
-            $sql->bindvalue(':statut',$statut_emprunt);
-            $sql->bindvalue(':etat',$etat_equipement);
-            $sql->bindvalue(':tel',$tel_emprunteur);
-            $sql->bindvalue(':date_emprunt',$date_emprunt);
-            $sql->bindvalue(':date_retour',$date_retour);
-    
-            $sql->execute();
-            $donnees=$sql->fetch(PDO::FETCH_ASSOC);
-            if($sql){
-                echo"<h4><font color=blue> Modification reuissie </font></h4>";
+            function Modification_emprunt(){
+                global $id_emprunt, $nom_equipement, $statut_emprunt, $etat_equipement, $nom_emprunteur, $date_emprunt, $date_retour;
+            
+                try {
+                    include("connexion.php");
+            
+                    // Récupérer l'identifiant de l'équipement basé sur son nom
+                    $sql_equipement = "SELECT id_equipement FROM equipement WHERE nom_equipement = :nom_equipement";
+                    $stmt_equipement = $db->prepare($sql_equipement);
+                    $stmt_equipement->bindValue(':nom_equipement', $nom_equipement);
+                    $stmt_equipement->execute();
+                    $row_equipement = $stmt_equipement->fetch(PDO::FETCH_ASSOC);
+                    $id_equipement = $row_equipement['id_equipement'];
+            
+                    // Récupérer l'identifiant de l'emprunteur basé sur son nom
+                    $sql_emprunteur = "SELECT matricule_emprunteur FROM emprunteur WHERE nom_emprunteur = :nom_emprunteur";
+                    $stmt_emprunteur = $db->prepare($sql_emprunteur);
+                    $stmt_emprunteur->bindValue(':nom_emprunteur', $nom_emprunteur);
+                    $stmt_emprunteur->execute();
+                    $row_emprunteur = $stmt_emprunteur->fetch(PDO::FETCH_ASSOC);
+                    $matricule_emprunteur = $row_emprunteur['matricule_emprunteur'];
+            
+                    // Mettre à jour l'emprunt avec les nouvelles informations
+                    $sql_update_emprunt = "UPDATE emprunt SET id_equipement = :id_equipement, statut_emprunt = :statut_emprunt, etat_equipement = :etat_equipement, matricule_emprunteur = :matricule_emprunteur, date_emprunt = :date_emprunt, date_retour = :date_retour WHERE id_emprunt = :id_emprunt";
+                    $stmt_update_emprunt = $db->prepare($sql_update_emprunt);
+                    $stmt_update_emprunt->bindValue(':id_emprunt', $id_emprunt);
+                    $stmt_update_emprunt->bindValue(':id_equipement', $id_equipement);
+                    $stmt_update_emprunt->bindValue(':statut_emprunt', $statut_emprunt);
+                    $stmt_update_emprunt->bindValue(':etat_equipement', $etat_equipement);
+                    $stmt_update_emprunt->bindValue(':matricule_emprunteur', $matricule_emprunteur);
+                    $stmt_update_emprunt->bindValue(':date_emprunt', $date_emprunt);
+                    $stmt_update_emprunt->bindValue(':date_retour', $date_retour);
+                    $stmt_update_emprunt->execute();
+            
+                    echo "<h4><font color=blue> Modification réussie </font></h4>";
+                } catch(Exception $e) {
+                    die('Erreur : ' . $e->getMessage());
+                }
             }
-            else{
-                echo"<h4><font color=red>Echec de Modification </font></h4>";
-    
-            }
-            $sql->closecursor();
-        }
-        catch(Exeption $e){
-            die('Erreur:'.$e->getMessage());
-        } 
-        
-    }
+            
             
           ?>  
  
@@ -216,7 +135,6 @@
             }
             if(isset($_POST['matricule_emprunteur'])){
                 $matricule_emprunteur=$_POST['matricule_emprunteur'];
-                recuperer_nom_emprunteur();
 
             }
             if(isset($_POST['statut_emprunt'])){
@@ -227,7 +145,6 @@
             }
             if(isset($_POST['id_equipement'])){
                 $id_equipement=$_POST['id_equipement'];
-                recuperer_nom_equipement();
 
             }
             if(isset($_POST['date_emprunt'])){
@@ -292,53 +209,54 @@ h1{
 }
         </style>
         <div class="container py-3">
-                <form action="update_emprunt.php " method="post" class="row col-8 m-5 g-3 form "  >
-                    <h1>Modifier un emprunt</h1>
+        <form action="update_emprunt.php" method="post" class="row col-8 m-5 g-3 form">
+    <h1>Modifier un emprunt</h1>
 
-                    <div class="formulaire">
-
-                    <div class="col md-5">
-                    <label  class="form-label" name="matricule_emprunteur"   value="<?php echo $matricule_emprunteur;?>"> Matricule de l'emprunteur:</label>
-                           <?php recuperer_matricule_emprunteur();?>
-                    <div class="col md-9">
-                    <label  class="form-label" name="nom_emprunteur"> Nom de l'emprunteur:</label>
-                        <input type="text "name="" placeholder="ecrivez"  value="<?php echo $nom_emprunteur;?>" required>
-                    <div class="col md-5">
-                    <label  class="form-label" name="id_equipement"  value="<?php echo $id_equipement;?>"> ID_equipement:</label>
-                           <?php recuperer_id_equipement();?>
-                    <div class="col md-9">
-                    <label  class="form-label" name="nom_equipement"> Nom de l'equipement:</label>
-                            <input type="text "name="" placeholder="ecrivez"  value="<?php echo $nom_equipement;?>" required>
-                       
-                    <div class="col md-5">
-                    <label  class="col-sm-5 control-label">statut de l'emprunt:</label>
-                        <div class="col-sm-12">
-                            <input type="text "name="statut_emprunt" placeholder="ecrivez" class="form-control" id="input2" value="<?php echo $statut_emprunt;?>" required>
-                        </div>
-                    <div>
-                    <div class="col md-5">
-                    <label  class="col-sm-5 control-label">date d'emprunt:</label>
-                        <div class="col-sm-12">
-                            <input type="time" name="date_emprunt" class="form-control" id="input2" value="<?php echo $date_emprunt;?>" required>
+    <div class="formulaire">
+        <div class="col md-5">
+            <label class="col-sm-5 control-label">id emprunt:</label>
+            <div class="col-sm-12">
+                <input type="text" placeholder="Ecrivez" name="id_emprunt" class="form-control" id="input2" value="<?php echo isset($_GET['id']) ? $_GET['id'] : $id_emprunt; ?>">
+            </div>
+        </div>
+        <div class="col md-9">
+            <label class="col-sm-5 control-label">nom emprunteur:</label>
+            <div class="col-sm-12">
+                <input type="text" name="nom_emprunteur" class="form-control" placeholder="Ecrivez" id="input2" value="<?php echo $nom_emprunteur;?>" required>
+            </div>
+        </div>
+        <div class="col md-9">
+            <label class="col-sm-5 control-label">nom de l'équipement:</label>
+            <div class="col-sm-12">
+                <input type="text" name="nom_equipement" class="form-control" placeholder="Ecrivez" id="input2" value="<?php echo $nom_equipement;?>" required>
+            </div>
+        </div>
+        <div class="col md-5">
+            <label class="col-sm-5 control-label">statut de l'emprunt:</label>
+            <div class="col-sm-12">
+                <input type="text" name="statut_emprunt" placeholder="Ecrivez" class="form-control" id="input2" value="<?php echo $statut_emprunt;?>" required>
+            </div>
+        </div>
+        <div class="col md-5">
+            <label class="col-sm-5 control-label">date d'emprunt:</label>
+            <div class="col-sm-12">
+                <input type="text" name="date_emprunt" class="form-control" id="input2" value="<?php echo $date_emprunt;?>" required>
+            </div>
+        </div>
+        <div class="col md-5">
+            <label class="col-sm-5 control-label">Date retour:</label>
+            <div class="col-sm-12">
+                <input type="time" name="date_retour" placeholder="Ecrivez" class="form-control" id="input2" value="<?php echo $date_retour;?>" required>
+            </div>
+        </div>
+        <div class="col md-5">
+            <label class="form-label">état de l'équipement:</label>
+            <select class="form-select" name="etat_equipement">
+                <option value="en bon état" <?php if ($etat_equipement == 'en bon état') echo 'selected'; ?>>en bon état</option>
+                <option value="défectueux" <?php if ($etat_equipement == 'défectueux') echo 'selected'; ?>>défectueux</option>
+            </select>
                     </div>
-                    <div class="col md-5">
-                    <label  class="col-sm-5 control-label">Date retour:</label>
-                        <div class="col-sm-12">
-                            <input type="time"name="date_retour" placeholder="ecrivez" class="form-control" id="input2" value="<?php echo $date_retour;?>" required>
-                    </div>  
-                    </div>
-                    <div class="col md-5">
-                        <label class="form-label">etat equipement</label>
-                        <select class="form-select" name="etat_equipement">
-                            <option value="en bon etat" <?php if ($etat_equipement == 'en bon etat') echo 'selected'; ?>>en bon etat</option>
-                            <option value="defectueux" <?php if ($etat_equipement == 'defectueux') echo 'selected'; ?>>defectueux</option>
-                        </select>
-                    </div>
-                    <div class="col md-5">
-                    <label  class="col-sm-5 control-label">Description:</label>
-                        <div class="col-sm-12">
-                            <textarea class="form-control" placeholder="veuillez remplir une description" rows="5"> </textarea>
-                    </div>
+                 
                     
                         <div class="col md-5 pt-4">
                             <input type="submit" value="Modifier" name="btnModifier_emprunt" class="btn btn-secondary m-3 col-12">
