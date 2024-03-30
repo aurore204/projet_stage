@@ -1,4 +1,7 @@
 <?php
+session_start(); 
+?>
+<?php
     require_once('connection.php');
     if(isset($_POST) &!empty($_POST)){
         $name=($_POST['name']);
