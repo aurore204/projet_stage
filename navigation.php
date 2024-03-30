@@ -96,7 +96,7 @@
             <li class="logout">
                 <div class="align">
                     <i class="fa fa-sign-out-alt"  class="icon"style="font-size:20px"></i>
-                    <span><a href="logout.php" class="item">Deconneion</a></span>
+                    <span><a href="logout.php" class="item">Deconnexion</a></span>
                     <script src="https:cdn.jsdelivr.net/npm/@popperjs/core@2..min.js/10.2/dist/umd/popper"></script>
                     <script src="bootstrap-5.1.3-dist\js\bootstrap.min.js"></script>
                 </div>

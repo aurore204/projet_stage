@@ -27,7 +27,6 @@
           <div class=" ">
             <h2>voici la liste des utilisateurs</h2>
             <a href="user.php " class="fleche"><i class="fa fa-long-arrow-left" ></i></a>
-            <div class="d-grid gap-5 d-md-flex justif-content-md-start">
 
             <a href="user.php"class="btn btn-danger my-6"name="enre" id="ajout" custom-width>Ajouter un utilisateur</a>
             <button class="btn btn-dark my-6" data-bs-toggle="modal" data-bs-target="#modaladd"  name="imprimer" onclick="window.print()">imprimer</button>

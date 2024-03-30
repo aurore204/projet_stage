@@ -10,6 +10,12 @@
 <body>
 <div class="sidebar close">
         <ul class="menu"> 
+        <li >
+                <div class="align">
+                    <i class="fa fa-tachometer-alt" style="font-size:20px"></i>
+                    <span><a href="accueil.php" class="item">Dashboard</a></span>
+                </a>
+            </li>
             <li>
                 <div class="align">
                     <i class="fas fa-table" class="icon" style="font-size:20px"></i> <!-- Icône Font Awesome pour la gestion des emprunts -->
@@ -26,7 +32,7 @@
                 </div>
             </li>
 
-            <li class="active">
+            <li >
                 <div class="align">
                     <i class="fas fa-desktop"  class="icon"style="font-size:20px"></i>
                     <span><a href="liste_equipement.php" class="item">Gestion des equipements </a></span>
@@ -80,6 +86,12 @@
                         <span><a href="users.php" class="item">parametres</a></span>
                     </div>
                 </a>
+            </li>
+            <li class="active">
+                <div class="align">
+                    <i class="fas fa-users" class="icon" style="font-size:20px"></i> <!-- Icône Font Awesome pour la gestion des emprunts -->
+                    <span><a href="liste_user.php" class="item">Gestion des utilisateurs</a></span>
+                </div>
             </li>
             <li class="logout">
                 <div class="align">

@@ -28,7 +28,6 @@
           <div class=" ">
             <h2>voici la liste des types d'emprunteurs</h2>
             <a href="ajout_emprunteur.php " class="fleche"><i class="fa fa-long-arrow-left" ></i></a>
-            <div class="d-grid gap-5 d-md-flex justif-content-md-start">
 
             <a href="ajout_type_emprunteur.php"class="btn btn-danger my-6"name="enre" id="ajout" custom-width>Ajouter un type d'emprunteur</a>     
             <button class="btn btn-secondary my-6" data-bs-toggle="modal" data-bs-target="#modaladd"  name="imprimer" onclick="window.print()">imprimer</button>
