@@ -1,5 +1,11 @@
+
 <?php
-session_start(); 
+// Vérifier si l'utilisateur est connecté en tant qu'admin ou utilisateur
+if (isset($_SESSION['role'])) {
+    $role = $_SESSION['role'];
+} else {
+    $role = 'guest'; // Si aucun rôle n'est défini, considérez l'utilisateur comme invité
+}
 ?>
 <html>
 <head >
@@ -52,11 +58,15 @@ session_start();
                 </div>
             </li>
             <li>
+                <!-- Afficher les liens pour l'administrateur -->
+            <?php if ($role === 'admin'): ?>
                 <div class="align">
                     <i class="fas fa-chart-bar"  class="icon"style="font-size:20px"></i>
                     <span><a href="rapport.php" class="item">Rapports</a></span>
                 </div>
             </li>
+            <?php endif; ?>
+
             <li>
             <div class="align">
                     <i class="fas fa-box" class="icon" style="font-size:20px"></i>
@@ -90,18 +100,20 @@ session_start();
                     </div>
                 </a>
             </li>
+            <!-- Afficher les liens pour l'administrateur -->
+            <?php if ($role === 'admin'): ?>
             <li>
                 <div class="align">
                     <i class="fas fa-users" class="icon" style="font-size:20px"></i> <!-- Icône Font Awesome pour la gestion des emprunts -->
                     <span><a href="liste_user.php" class="item">Gestion des utilisateurs</a></span>
                 </div>
             </li>
+            <?php endif; ?>
+
             <li class="logout">
                 <div class="align">
                     <i class="fa fa-sign-out-alt"  class="icon"style="font-size:20px"></i>
                     <span><a href="logout.php" class="item">Deconnexion</a></span>
-                    <script src="https:cdn.jsdelivr.net/npm/@popperjs/core@2..min.js/10.2/dist/umd/popper"></script>
-                    <script src="bootstrap-5.1.3-dist\js\bootstrap.min.js"></script>
                 </div>
             </li> 
         </ul>
