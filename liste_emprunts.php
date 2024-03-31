@@ -13,6 +13,7 @@ session_start();
     <title>Listes des emprunts</title>
 </head>
 <body>
+  
 <?php
         include'header.php';
       ?>
@@ -26,14 +27,21 @@ session_start();
           ?>
          
         </div>
+        <style>
+          .liste a{
+            float: right;
+          }
+    </style>
         <div class="container">
           <div class=" ">
-            <h2>voici la liste des emprunts</h2>
+            <h2>voici la liste des emprunts</h2>               <div class="liste"> 
+              <a href="liste_non_eligibles.php"class="btn btn-info my-6"name="enre" id="ajout" custom-width>voir la liste des non eligibles</a>
+            </div>
+
             <a href="Emprunt.php " class="fleche"><i class="fa fa-long-arrow-left" ></i></a>
             <div class="d-grid gap-5 d-md-flex justif-content-md-start">
               <a href="Emprunt.php"class="btn btn-dark my-6"name="enre" id="ajout" custom-width>Ajouter un emprunt</a>
               <button class="btn btn-secondary my-6" data-bs-toggle="modal" data-bs-target="#modaladd"  name="imprimer" onclick="window.print()">imprimer</button>
-              <a href="liste_non_eligibles.php"class="btn btn-info my-6"name="enre" id="ajout" custom-width>voir la liste des non eligibles</a>
 </div>
             <table class="table table-bordered table-striped mt-3">
               <thead class="table-success">

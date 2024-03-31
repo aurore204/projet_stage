@@ -27,12 +27,16 @@ session_start();
           ?>
          
         </div>
+        <style>
+        .liste a{
+            float: right;
+          }</style>
         <div class="container">
           <div class=" ">
             <h2>voici la liste des types d'emprunteurs</h2>
             <a href="ajout_emprunteur.php " class="fleche"><i class="fa fa-long-arrow-left" ></i></a>
-
-            <a href="ajout_type_emprunteur.php"class="btn btn-danger my-6"name="enre" id="ajout" custom-width>Ajouter un type d'emprunteur</a>     
+            <div class="liste">
+            <a href="ajout_type_emprunteur.php"class="btn btn-danger my-6"name="enre" id="ajout" custom-width>Ajouter un type d'emprunteur</a> </div>    
             <button class="btn btn-secondary my-6" data-bs-toggle="modal" data-bs-target="#modaladd"  name="imprimer" onclick="window.print()">imprimer</button>
 
             <table class="table table-bordered table-striped mt-3">

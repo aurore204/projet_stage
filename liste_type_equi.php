@@ -25,11 +25,16 @@ session_start();
           ?>
          
         </div>
+        <style>
+        .liste a{
+            float: right;
+          }</style>
         <div class="container">
           <div class=" ">
             <h2>voici la liste des equipements</h2>
             <a href="liste_type_equipement.php " class="fleche"><i class="fa fa-long-arrow-left" ></i></a>
-            <a href="ajout_type_equi.php"class="btn btn-info my-6"name="enre" id="ajout" custom-width>Ajouter un type d'equipement</a>
+            <div class="liste">
+            <a href="ajout_type_equi.php"class="btn btn-info my-6"name="enre" id="ajout" custom-width>Ajouter un type d'equipement</a></div>
             <button class="btn btn-secondary my-6" data-bs-toggle="modal" data-bs-target="#modaladd"  name="imprimer" onclick="window.print()">imprimer</button>
 
             <table class="table table-bordered table-striped mt-3">

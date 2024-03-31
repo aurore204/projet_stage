@@ -26,12 +26,16 @@ session_start();
           ?>
          
         </div>
+        <style>
+        .liste a{
+            float: right;
+          }</style>
         <div class="container">
           <div class=" ">
             <h2>voici la liste des utilisateurs</h2>
             <a href="user.php " class="fleche"><i class="fa fa-long-arrow-left" ></i></a>
-
-            <a href="user.php"class="btn btn-danger my-6"name="enre" id="ajout" custom-width>Ajouter un utilisateur</a>
+            <div class="liste">
+            <a href="user.php"class="btn btn-danger my-6"name="enre" id="ajout" custom-width>Ajouter un utilisateur</a></div>
             <button class="btn btn-dark my-6" data-bs-toggle="modal" data-bs-target="#modaladd"  name="imprimer" onclick="window.print()">imprimer</button>
 
             <table class="table table-bordered table-striped mt-3">

@@ -141,7 +141,7 @@ session_start();
                     include("connexion.php");
 
                     // Requête pour mettre à jour le nombre d'équipements disponibles
-                    $sql = "UPDATE equipement SET quantite_stock_equipement = quantite_stock_equipement + 1 WHERE id_equipement = :id_equipement and nom_equipement=:nom ";
+                    $sql = "UPDATE equipement SET quantite_stock_equipement = quantite_stock_equipement + 1 WHERE id_equipement = :id_equipement and nom_equipement=:nom  and quantite_stock_equipement<= quantite_equipement";
                     $sql = $db->prepare($sql);
                     $sql->bindvalue(':id_equipement', $id_equipement);
                     $sql->bindvalue(':nom', $nom_equipement);
