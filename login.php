@@ -14,18 +14,17 @@ if (isset($_POST['envoyer'])) {
             $_SESSION['nom'] = $nom;
             header('Location: accueil.php');
             exit;
-        } elseif ($mot_passe === 'user' && $nom == 'ndjapa') {
+        } elseif ($mot_passe === 'user' && $nom == 'ndjapa') {       
             // Stockage des informations d'identification dans la session
             $_SESSION['role'] = 'user';
-            $_SESSION['nom'] = $nom;
+            $_SESSION['nom'] = $nom;                                  
             header('Location: accueil.php');
-            exit;
+            exit; 
         } else {
             // Identifiants invalides
             $_SESSION['message'] = 'Identifiants invalides.';
         }
     } else {
-        // Tous les champs ne sont pas remplis
         $_SESSION['message'] = 'Veuillez remplir tous les champs.';
     }
 }
@@ -42,7 +41,9 @@ if (isset($_POST['envoyer'])) {
 <body>
     <div class="container">
         <div class="box form-box">
-            <header>BIENVENUE</header>
+            <header>BIENVENUE
+            <img src="../PROJETS/ime.png" alt="ime" class="image" width="50px"/>
+            </header>
             <?php if (isset($_SESSION['message'])) : ?>
                 <div class="alert alert-danger" role="alert">
                     <?php echo $_SESSION['message']; ?>

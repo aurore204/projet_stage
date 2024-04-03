@@ -326,7 +326,7 @@ h1{
                     <div class="col md-5">
                     <label  class="col-sm-5 control-label">Date retour:</label>
                         <div class="col-sm-12">
-                            <input type="time"name="date_retour" placeholder="ecrivez" class="form-control" id="input2" value="<?php echo $date_retour;?>" required>
+                            <input type="text"name="date_retour" placeholder="ecrivez" class="form-control" id="input2" value="<?php echo $date_retour;?>" required>
                     </div>  
                     </div>
                     <div class="col md-5">

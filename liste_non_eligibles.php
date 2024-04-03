@@ -49,7 +49,7 @@ session_start();
                         JOIN equipement eq ON eq.id_equipement = em.id_equipement
                         JOIN filiere f ON f.code_fil = e.code_fil
                         WHERE em.statut_emprunt = 'en prêt'
-                          AND em.date_retour < DATE_SUB(NOW(), INTERVAL 10 HOUR)";
+                          AND em.date_retour < DATE_SUB(NOW(), INTERVAL 24 HOUR)";
 
                         $sql = $db->prepare($sql);
                         $sql->execute();

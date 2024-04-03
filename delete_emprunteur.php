@@ -19,7 +19,7 @@ try{
     $sql->bindvalue(':matricule',$matricule_emprunteur);
     $sql->execute();
     if($sql){
-        header("location:liste_filiere.php");
+        header("location:liste_emprunteur.php");
     }else{
         echo"Failed to delete";
     } $sql->closecursor();

@@ -5,11 +5,9 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="fontawesome-free-6.4.2-web\css\all.min.css">
     <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/insere_equipement.css" type="text/css">
-    <script src="https:cdn.jsdelivr.net/npm/@popperjs/core@2..min.js/10.2/dist/umd/popper"></script>
         <script src="bootstrap-5.1.3-dist\js\bootstrap.min.js"></script>
     <title>ajout emprunt</title>
     <?php
@@ -276,12 +274,6 @@ h1{
                     <option value="defectueux" <?php if ($etat_equipement == 'defectueux') echo 'selected'; ?>>defectueux</option>
                 </select>
             </div>
- 
-                    <div class="col md-5">
-                    <label  class="col-sm-5 control-label">Description:</label>
-                        <div class="col-sm-12">
-                            <textarea class="form-control" placeholder="veuillez remplir une description" rows="5"> </textarea>
-                    </div>
                         <div class="col md-5 pt-4">
                             <input type="submit" value="emprunter" name="btnEnregistrer_emprunt" class="btn btn-primary m-3 col-12">
                         </div>
