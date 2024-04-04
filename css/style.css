@@ -1,5 +1,4 @@
 /*Import Google fontlink*/
-@import url("https://fonts.googleapis.com/css2? family=poppins:wght@400;600&display=swap");
 *{
     margin:0;
     padding:0;
@@ -32,7 +31,19 @@ main{
     position :relative;
     width:77%;
     padding:1rem;
+    z-index: 1;
    
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 6em;
+}
+.liste{
+    position: absolute;
+    bottom: 0;
+    z-index: 2px;
+
 }
 /*debut du main -- card container*/
 .card--container{

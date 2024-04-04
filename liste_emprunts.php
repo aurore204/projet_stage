@@ -102,7 +102,6 @@ session_start();
             </tbody>
           </table>
           </div>  
-          <script src="https:cdn.jsdelivr.net/npm/@popperjs/core@2..min.js/10.2/dist/umd/popper.min.js"></script>
         <script src="bootstrap-5.1.3-dist\js\bootstrap.min.js"></script>
 
       </div>
